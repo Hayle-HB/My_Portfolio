@@ -1,0 +1,217 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: inherit; /* Maintain the same background color as the rest of the nav */
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navigation .nav-content nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 15px;
+}
+
+.navigation .nav-content nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.2vw;
+  color: white;
+  opacity: 0.6;
+  transition: color 0.3s ease;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+nav ul li a:hover {
+  color: aqua;
+  opacity: 1;
+}
+
+nav ul li a::before,
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: #dd10bb;
+  transition: width 0.4s ease-in-out;
+}
+
+nav ul li a::before {
+  left: 0;
+  width: 0;
+}
+
+nav ul li a::after {
+  left: 0;
+  width: 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid aqua;
+  width: 150px;
+  margin-top: 15px;
+  border-radius: 15px;
+  
+}
+
+.logo:hover {
+  animation: borderColorChange 2s linear infinite;
+}
+
+.logo h1 {
+
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  font-size: 2vw;
+  color: aqua;
+  font-family: "Sevillana", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.4s ease-in-out, background-size 0.4s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  background-image: linear-gradient(120deg, #ff01af 0%, #ff0000 100%);
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  background-position: 0 100%;
+  text-shadow: 2px 2px 2px white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logo h1:hover {
+  animation: pulse 0.6s infinite;
+  letter-spacing: 4px;
+  background-size: 100% 2px;
+  color: rgb(0, 247, 255);
+}
+
+/* Base button styling */
+.navigation .nav-content button {
+  width: 150px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border: 1px solid aqua;
+  border-radius: 20px;
+  color: rgb(0, 255, 149);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Styling for the border color rotation */
+@keyframes borderColorChange {
+  0% {
+    border-color: aqua;
+  }
+  25% {
+    border-color: red;
+  }
+  50% {
+    border-color: yellow;
+  }
+  75% {
+    border-color: green;
+  }
+  100% {
+    border-color: aqua;
+  }
+}
+
+.navigation .nav-content button {
+  width: 10vw;
+  height: 8vh;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 20px;
+  color: rgb(0, 255, 149);
+  font-size: 1vw;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 25px;
+  margin-left: -200px;
+}
+
+/* Styling for the border color rotation */
+.navigation .nav-content button:hover::before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, aqua, aqua) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotateBorder 2s linear infinite;
+  border: 1px solid aqua;
+}
+
+/* Keyframes for rotating border */
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide default border */
+.navigation .nav-content button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  border: 1px solid rgb(0, 255, 149);
+  z-index: -1;
+}

@@ -1,0 +1,133 @@
+.main-body-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+
+.main-body-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 30px;
+}
+
+.main-text-area {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.I-am {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: yellow;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: aqua;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.profile-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image img {
+  height: 25vw;
+  width: 25vw;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.profile-image img:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.main-buttons {
+  display: flex;
+}
+
+.main-buttons img {
+  width: 2vw;
+  height: 2vw;
+  padding: 0px 10px;
+}
+
+.main-buttons img:hover {
+  cursor: pointer;
+  width: 2.1vw;
+  height: 2.1vw;
+  animation: rotate 0.5s ease forwards;
+  opacity: 0.5;
+}
+
+.main-buttons img:first-child {
+  margin-left: -10px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* Rotate to 180 degrees */
+  }
+}
+
+
+
+.download-resume {
+  position: absolute;
+  padding: 20px;
+  border-radius: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4vw;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.download-resume button {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+button:hover {
+  color: aqua;
+  opacity: .7;
+}
+
